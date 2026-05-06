@@ -7,7 +7,7 @@ pages_build_output_dir = "dist"
 [[d1_databases]]
 binding = "DB"
 database_name = "iauthr-db"
-database_id = "" # Will be filled after d1 create
+database_id = "3e8a0ac1-6870-4d3e-8bc1-b099e9d1cbe3"
 
 # R2 Bucket for audio files
 [[r2_buckets]]
@@ -17,7 +17,7 @@ bucket_name = "iauthr-audio"
 # KV for session tokens
 [[kv_namespaces]]
 binding = "SESSIONS"
-id = "" # Will be filled after kv create
+id = "ac0f156512f844b790a7c2a795a5b754"
 
 # Environment variables (set via wrangler secret)
 # At least ONE LLM key required. User selects preferred engine.
