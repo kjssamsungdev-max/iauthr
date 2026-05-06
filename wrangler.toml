@@ -1,0 +1,37 @@
+# iauthr - Cloudflare Pages configuration
+name = "iauthr"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "dist"
+
+# D1 Database
+[[d1_databases]]
+binding = "DB"
+database_name = "iauthr-db"
+database_id = "" # Will be filled after d1 create
+
+# R2 Bucket for audio files
+[[r2_buckets]]
+binding = "AUDIO"
+bucket_name = "iauthr-audio"
+
+# KV for session tokens
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "" # Will be filled after kv create
+
+# Environment variables (set via wrangler secret)
+# At least ONE LLM key required. User selects preferred engine.
+# ANTHROPIC_API_KEY  - Claude (primary, recommended)
+# XAI_API_KEY        - Grok (xAI)
+# GOOGLE_API_KEY     - Gemini
+# MINIMAX_API_KEY    - MiniMax
+# OPENAI_API_KEY     - GPT-4o
+# MISTRAL_API_KEY    - Mistral
+# DEEPSEEK_API_KEY   - DeepSeek
+# GROQ_API_KEY       - Llama via Groq
+# JWT_SECRET         - for auth tokens
+# WHISPER_API_KEY    - for transcription (optional, can use browser)
+
+[vars]
+ENVIRONMENT = "production"
+APP_URL = "https://iauthr.com"

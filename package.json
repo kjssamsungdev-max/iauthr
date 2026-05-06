@@ -1,0 +1,30 @@
+{
+  "name": "iauthr",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name=iauthr",
+    "db:migrate": "wrangler d1 execute iauthr-db --file=./migrations/0001_schema.sql --remote",
+    "db:migrate:local": "wrangler d1 execute iauthr-db --file=./migrations/0001_schema.sql --local",
+    "db:seed": "wrangler d1 execute iauthr-db --file=./migrations/0002_seed_prompts.sql --remote",
+    "lint": "eslint src --ext .ts,.tsx"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240529.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "typescript": "^5.5.3",
+    "vite": "^6.0.0",
+    "wrangler": "^3.60.0"
+  }
+}
